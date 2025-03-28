@@ -8,28 +8,25 @@
             "args": [
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "a.exe",
                 "&",
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "a.exe",
                 "<",
-                "${fileDirname}/input.txt",
+                "input.txt",
                 ">",
-                "${fileDirname}/output.txt"
-				
+                "output.txt"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": "$gcc",
-			"detail": "Generated task by vscode",
-			"options":{
-				"shell":{
-					"executable": "cmd.exe",
-					
-				}
-			}
-			
+            "detail": "Generated task by vscode",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                }
+            }
         },
     ]
 }
