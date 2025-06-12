@@ -6,18 +6,38 @@ using namespace std;
 #define endl '\n'
 void soln()
 {
-    
+    int n;
+    string s;
+    cin >> n >> s;
+
+    int hy, un;
+    hy = un = 0;
+
+    for (char x : s)
+    {
+        if (x == '-')
+            hy++;
+        else if (x == '_')
+            un++;
+    }
+
+    if (hy < 2 || un == 0)
+    {
+        cout << 0 << endl;
+        return;
+    }
+    cout << (hy / 2) * un * ((hy + 1) / 2) << endl;
 }
 
-
-int main(){
+int main()
+{
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
 
     int t;
     cin >> t;
-    while(t--)
+    while (t--)
         soln();
     return 0;
 }
