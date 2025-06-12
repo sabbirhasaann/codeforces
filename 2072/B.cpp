@@ -10,7 +10,7 @@ void soln()
     string s;
     cin >> n >> s;
 
-    int hy, un;
+    ll hy, un;
     hy = un = 0;
 
     for (char x : s)
@@ -26,7 +26,9 @@ void soln()
         cout << 0 << endl;
         return;
     }
-    cout << (hy / 2) * un * ((hy + 1) / 2) << endl;
+    ll lp = hy / 2;
+    ll ls = (hy + 1) / 2;
+    cout << lp * un * ls << endl;
 }
 
 int main()
