@@ -6,21 +6,29 @@ using namespace std;
 #define endl '\n'
 void soln()
 {
-    ll a, b, n, sum;
+    ll a, b, n;
     cin >> a >> b >> n;
 
     vector<ll> arr(n);
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    if (b == 1)
-        sum = 0;
-    else
-        sum = b - 1;
-
+    ll timer = b;
+    ll seconds = 0;
     for (int i = 0; i < n; i++)
-        sum += min(a, arr[i]);
-    cout << sum << "\n";
+    {
+        timer = min(a, timer + arr[i]);
+        seconds++;
+        timer--;
+        if (timer == 0)
+            break;
+    }
+    while (timer > 0)
+    {
+        seconds++;
+        timer--;
+    }
+    cout << seconds << "\n";
 }
 
 int main()
