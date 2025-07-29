@@ -13,22 +13,10 @@ void soln()
     for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    ll timer = b;
-    ll seconds = 0;
+    ll times = b;
     for (int i = 0; i < n; i++)
-    {
-        timer = min(a, timer + arr[i]);
-        seconds++;
-        timer--;
-        if (timer == 0)
-            break;
-    }
-    while (timer > 0)
-    {
-        seconds++;
-        timer--;
-    }
-    cout << seconds << "\n";
+        times += min(arr[i], a - 1);
+    cout << times << endl;
 }
 
 int main()
