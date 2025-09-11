@@ -17,8 +17,10 @@ void solve()
     }
 
     int x = 1;
-    for (auto [k, v] : freq)
+    for (pair<int, vector<int>> p : freq)
     {
+        int k = p.first;
+        vector<int> v = p.second;
         if (v.size() % k != 0)
         {
             cout << -1 << endl;
