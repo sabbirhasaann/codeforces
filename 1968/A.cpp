@@ -15,9 +15,10 @@ void solve()
     int y, max = -1;
     for (int i = 1; i < x; i++)
     {
-        if ((gcd(i, x) + i) > max)
+        int gcd_v = gcd(i, x);
+        if ((gcd_v + i) > max)
         {
-            max = gcd(i, x) + i;
+            max = gcd_v + i;
             y = i;
         }
     }
