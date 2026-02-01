@@ -12,6 +12,7 @@ vector<vector<int>> input_matrix(int n, int m)
             cin >> arr[i][j];
     return arr;
 }
+
 void soln()
 {
     int n,m,idx=0,max_sum = 0;
@@ -78,6 +79,32 @@ void soln()
 }
 
 
+void effSoln(){
+    int n,m,idx=0,max_sum = 0;
+    cin >> n >> m;
+    vector<vector<int>> mat = input_matrix(n,m);
+    vector<int> left(n+m-1, 0), right(n+m-1, 0);
+
+
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+        {
+            left[i+j] += mat[i][j];
+            right[i-j+m-1] += mat[i][j];
+        }
+    }
+
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<m;j++)
+            max_sum = max(max_sum, left[i+j]+right[i-j+m-1]-mat[i][j]);
+    }
+    cout << max_sum << endl;
+
+
+}
+
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);
@@ -86,6 +113,7 @@ int main(){
     int t;
     cin >> t;
     while(t--)
-        soln();
+        effSoln();
+        // soln(); 
     return 0;
 }
