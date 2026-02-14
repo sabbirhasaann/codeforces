@@ -85,6 +85,12 @@ void soln()
 
 }
 
+void effsoln(){
+    int n;
+    cin >> n;
+    cout << 0 <<" " << 0 << " " << n << endl;
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -92,6 +98,7 @@ int main(){
     int t=1;
     // cin >> t;
     while(t--)
-        soln();
+        // soln();
+        effsoln();
     return 0;
 }
