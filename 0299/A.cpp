@@ -46,6 +46,29 @@ void soln()
         cout << -1 << endl;
 }
 
+void effsoln(){
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+    int min_val = 2e9;
+
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+        if (a[i] < min_val) {
+            min_val = a[i];
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        if (a[i] % min_val != 0) {
+            cout << -1 << endl;
+            return;
+        }
+    }
+
+    cout << min_val << endl;
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -53,6 +76,7 @@ int main(){
     int t=1;
     // cin >> t;
     while(t--)
-        soln();
+        // soln();
+        effsoln();
     return 0;
 }
