@@ -7,6 +7,9 @@ using namespace std;
 #define YES cout << "YES\n"
 #define NO cout << "NO\n"
 #define endl '\n'
+
+long long n,a[200005],q,summ=0,pref[200005];
+
 void soln()
 {
     int n,q,sum=0;
@@ -29,7 +32,7 @@ void soln()
         --r;
         rangeSum = (l==0)? prefSum[r] : (prefSum[r] - prefSum[l-1]);
         newSum = sum - rangeSum + (r-l+1) * k;
-        
+
         if(newSum&1)
             YES;
         else
@@ -38,6 +41,27 @@ void soln()
     
 }
 
+void effsoln(){
+    
+    cin >> n >> q;
+    for(int i=1;i<=n;i++){
+        cin >> a[i];
+        pref[i]=pref[i-1];
+        pref[i]+=a[i];
+    }
+    for(int i = 0; i < q; i++){
+        long long l,r,k;
+        cin >> l >> r >> k;
+        long long ans = pref[n]-(pref[r]-pref[l-1])+k*(r-l+1);
+        if(ans%2==1){
+            cout<<"YES"<<endl;
+        }
+        else
+        {
+            cout<<"NO"<<endl;
+        }
+    }
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -45,6 +69,7 @@ int main(){
     int t;
     cin >> t;
     while(t--)
-        soln();
+        // soln();
+        effsoln();
     return 0;
 }
