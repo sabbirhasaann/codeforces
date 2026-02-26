@@ -31,6 +31,16 @@ void soln()
 
 }
 
+void soln1(){
+    int n, m ;
+    cin >> n >> m;
+
+    int lower_bound = (n+1)/2 ;
+    int ans = (lower_bound+m-1)/m*m ;
+    if(ans>n)
+        ans = -1 ;
+    cout << ans;
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -38,6 +48,7 @@ int main(){
     int t=1;
     // cin >> t;
     while(t--)
-        soln();
+        // soln();
+        soln1();
     return 0;
 }
