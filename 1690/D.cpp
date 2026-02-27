@@ -7,6 +7,9 @@ using namespace std;
 #define YES cout << "YES\n"
 #define NO cout << "NO\n"
 #define endl '\n'
+
+#define forn(i, n) for (int i = 0; i < int(n); i++)
+
 void soln()
 {
     int n, k, wh = 0, bl = 0, minimum = INT_MAX;
@@ -39,12 +42,30 @@ void soln()
 }
 
 
+
+
+
 int main(){
     ios_base::sync_with_stdio(false);
 
     int t;
     cin >> t;
-    while(t--)
-        soln();
+    // while(t--)
+        // soln();
+    forn(tt, t) {
+        int n, k;
+        cin >> n >> k;
+        string s;
+        cin >> s;
+        vector<int> w(n + 1);
+        for (int i = 1; i <= n; i++)
+            w[i] = w[i - 1] + int(s[i - 1] == 'W');
+        int result = INT_MAX;
+        for (int i = k; i <= n; i++)
+            result = min(result, w[i] - w[i - k]);
+        cout << result << endl;
+    }
+
+
     return 0;
 }
