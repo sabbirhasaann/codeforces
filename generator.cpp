@@ -36,7 +36,21 @@ void generateInt(int L, int R, int N){
     cout << "Pos sum: " << posSum << "\nNeg sum: " << negSum << endl;
 }
 
+void multiplication_table(int n, int m){
+    vector<vector<long long>> table(n+1, vector<long long>(m+1, 0));
+    vector<long long> freq((n*m) + 1, 0);
+    for(int i=1;i<=n;++i){
+        for(int j=1;j<=m;++j){
+            table[i][j] = i * j;
+            ++freq[i*j];
+        }
+    }
+    for(int i=1;i< n*m + 1;i++)
+        cout << setw(6) << i <<"----->" << setw(2) << freq[i] << endl;
+}
+
 int main()
 {
-    generateInt(-1000,1000, 100);
+    // generateInt(-1000,1000, 100);
+    multiplication_table(100,100);
 }
