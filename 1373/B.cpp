@@ -22,13 +22,30 @@ void soln()
             ++cnt;
         }
     }
-    
+
     if(cnt & 1)
         cout << "DA\n";
     else
         cout << "NET\n";
 }
 
+void effsoln(){
+    string s;
+    cin >> s;
+    int cnt0 = 0, cnt1 = 0;
+    for(int i=0;i<s.size();++i){
+        if(s[i]=='1')
+            ++cnt1;
+        else
+            ++cnt0;
+    }
+
+    if(min(cnt1,cnt0) & 1)
+        cout << "DA\n";
+    else
+        cout << "NET\n";
+    
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
