@@ -29,10 +29,16 @@ void soln()
     }
     // cout << multiple << endl;
     cout << (n + multiple -1) / n << endl;
+}
 
-
-
+void effsoln(){
+    long long n, k;
+    cin >> n >> k;
     
+    long long cf = (n + k - 1) / k;
+    k *= cf;
+    
+    cout << (k + n - 1) / n << endl;
 }
 
 
