@@ -32,6 +32,22 @@ void soln()
     cout << cost << endl;
 }
 
+void effsoln(){
+    long long x,y,a,b,cost=0;
+    cin >> x >> y >> a >> b;
+
+    x = abs(x);
+    y = abs(y);
+    
+    if(b < 2 * a){
+        cost += min(x,y) * b;
+        cost += (max(x,y) - min(x,y)) * a;
+    }
+    else
+        cost += x * a + y * a;
+    
+    cout << cost << endl;
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
