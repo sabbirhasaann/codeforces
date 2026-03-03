@@ -12,7 +12,7 @@ void soln()
     int n, a,b;
     cin >> n >> a >> b;
     for(int i=0;i<n;++i)
-        cout << char((i+b)%b + 'a');
+        cout << char((i+b)%b + 'a'); // we can use just char(i%b + 'a')
     cout << endl;
 }
 
