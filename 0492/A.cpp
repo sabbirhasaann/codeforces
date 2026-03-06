@@ -21,6 +21,27 @@ void soln()
     cout << h-1 << endl;
 }
 
+void effsoln() {
+    long long n;
+    cin >> n;
+    long long low = 0, high = 2000000; // cbrt(6 * 10^18) is approx 1.8M
+    long long ans = 0;
+
+    while (low <= high) {
+        long long h = low + (high - low) / 2;
+        // Using __int128 to prevent overflow during the multiplication
+        unsigned __int128 total = (unsigned __int128)h * (h + 1) * (h + 2) / 6;
+        
+        if (total <= (unsigned __int128)n) {
+            ans = h;
+            low = h + 1;
+        } else {
+            high = h - 1;
+        }
+    }
+    cout << ans << endl;
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -28,6 +49,7 @@ int main(){
     int t=1;
     // cin >> t;
     while(t--)
-        soln();
+        // soln();
+        effsoln();
     return 0;
 }
