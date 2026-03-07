@@ -40,6 +40,24 @@ void soln()
     
 }
 
+void effsoln(){
+    int n;
+    std::cin >> n;
+    std::map<int ,int> occ;
+    for (int i = 1; i <= n; ++i) {
+      int x;
+      std::cin >> x;
+      occ[x]++;
+    }
+    if (occ.size() >= 3) puts("No");
+    else {
+      if (std::abs(occ.begin()->second - occ.rbegin()->second) <= 1) {
+        puts("Yes");
+      } else {
+        puts("No");
+      }
+    }
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -47,6 +65,7 @@ int main(){
     int t;
     cin >> t;
     while(t--)
-        soln();
+        // soln();
+        effsoln();
     return 0;
 }
