@@ -17,6 +17,22 @@ void soln()
         SECOND;
 }
 
+void soln1(){
+    int a,b,c;
+    cin >> a >> b >> c;
+    if(c&1){
+        if(b>a)
+            SECOND;
+        else
+            FIRST;
+    }
+    else{
+        if(a>b)
+            FIRST;
+        else
+            SECOND;
+    }
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
