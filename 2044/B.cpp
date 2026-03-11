@@ -39,6 +39,14 @@ void soln()
     
 }
 
+void effsoln(){
+    string s;
+    cin >> s;
+    reverse(s.begin(), s.end());
+    for (char &c : s) if (c == 'q') c = 'p'; else if (c == 'p') c = 'q';
+    cout << s << '\n';
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
