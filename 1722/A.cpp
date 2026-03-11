@@ -28,6 +28,18 @@ void soln()
     NO;
 }
 
+void soln1(){
+    string name = "Timur";
+    sort(name.begin(), name.end());
+
+    int m;
+    cin >> m;
+    string s;
+    cin >> s;
+    sort(s.begin(), s.end());
+    cout << (s == name ? "YES" : "NO") << endl;
+
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
