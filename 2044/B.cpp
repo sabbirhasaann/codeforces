@@ -11,30 +11,26 @@ void soln()
 {
     string s;
     cin >> s;
-    for(int i=0,j=s.length()-1;i<=j;++i,--j){
-        if(s[i]=='p' && s[i]==s[j]){
+    int n = s.length();
+    for(int i=0,j=n-1;i<j;++i,--j){
+        if(s[i]=='p')
             s[i] = 'q';
-            s[j] = 'q';
-        }
-        else if(s[i]=='q' && s[i]==s[j]){
+        else if(s[i]=='q')
             s[i] = 'p';
+        if(s[j]=='p')
+            s[j] = 'q';
+        else if(s[j]=='q')
             s[j] = 'p';
-        }
-        else if(s[i]=='w' || s[j]=='w'){
-            if(s[i]=='p'){
-                s[i] = 'q';
-            }
-            else if(s[i]=='q')
-                s[i] = 'p';
-
-            if(s[j] == 'p')
-                s[j] = 'q';
-            else if(s[j] == 'q')
-                s[j] = 'p';
-                
-            swap(s[i],s[j]);   
-        }
+        swap(s[i],s[j]);   
     }
+    if(n & 1){
+        int idx = n/2;
+        if(s[idx]=='p')
+            s[idx] = 'q';
+        else if(s[idx]=='q')
+            s[idx] = 'p';
+    }
+        
     cout << s << endl;
     
 }
