@@ -25,6 +25,14 @@ void soln()
         NO;
 }
 
+void soln1(){
+    int n,cnt[2]={0};
+    cin>>n;
+    for(int i=1,x;i<=n*2;i++)cin>>x,cnt[x%2]++;
+    if(cnt[0]==n)puts("Yes");
+    else puts("No");
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
