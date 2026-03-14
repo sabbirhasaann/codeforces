@@ -85,6 +85,20 @@ void soln1(){
     cout << cnt << endl;
 }
 
+void effsoln(){
+    int n;
+    cin >> n;
+    int res = 0;
+    for (ll pw = 1; pw <= n; pw = pw * 10 + 1) {
+        for (int d = 1; d <= 9;  d++) {
+        if (pw * d <= n) {
+            res++;
+        }
+        }
+    }
+    cout << res << endl;
+}
+
 int main(){
     ios_base::sync_with_stdio(false);
 
