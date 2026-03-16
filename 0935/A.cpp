@@ -1,0 +1,50 @@
+// 2026/03/17 02:32:47
+// https://codeforces.com/problemset/problem/935/A
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define YES cout << "YES\n"
+#define NO cout << "NO\n"
+#define endl '\n'
+void soln()
+{
+    int n,ans=0;
+    cin >> n;
+    int l = 1, r = n - 1;
+    while(l<=r){
+        if(r%l == 0)
+            ++ans;
+        ++l;
+        --r;
+    }
+    
+    cout << ans<< endl;
+}
+
+
+int main(){
+    ios_base::sync_with_stdio(false);
+
+    int t=1;
+    // cin >> t;
+    while(t--)
+        soln();
+    return 0;
+}
+
+/*input
+2
+*/
+
+/*output
+1
+*/
+
+/*input
+10
+*/
+
+/*output
+3
+*/
