@@ -48,3 +48,11 @@ int main(){
 /*output
 3
 */
+
+/*
+The problem is also equivalent to finding
+the number of ways to divide the n employees 
+into equal teams where each team contains more 
+than one employee. It can also be solved in O(sqrt(n)) by 
+finding the number of divisors of n.
+*/
