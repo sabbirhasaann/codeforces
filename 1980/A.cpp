@@ -19,9 +19,10 @@ void soln()
     }
 
     for(int i=0;i<7;++i){
-        if(freq[i]<m)
-            cnt += (m-freq[i]);
-        
+        // if(freq[i]<m)
+        //     cnt += (m-freq[i]);
+        // or
+        cnt+= max(0, m-freq[i]);
     }
     cout << cnt << endl;
 }
