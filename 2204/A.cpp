@@ -33,6 +33,14 @@ void soln()
     
 }
 
+void effsoln(){
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;             
+    cout << s.find("RL") + 2 << endl;
+}
+
 int main(){
     ios_base::sync_with_stdio(false);
 
