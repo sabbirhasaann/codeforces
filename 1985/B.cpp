@@ -20,6 +20,11 @@ void soln()
 
 }
 
+void soln1(){
+    int n;
+    cin >> n;
+    cout << (n == 3 ? 3 : 2) << endl;
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
