@@ -35,6 +35,26 @@ void soln()
     
 }
 
+void soln1() {
+  int n,c1=0,cm1=0,ans=0;
+  cin>>n;
+  for(int i=0;i<n;++i){
+    int x;
+    cin >> x;
+    if(x==1) c1++;
+    else cm1++;
+  }
+  
+  if(cm1>c1){
+    int x=(cm1-c1+1)/2;
+    ans+=x;
+    cm1-=x;
+    c1+=x;
+  }
+  if(cm1%2) ans++;
+  cout<<ans<<endl;
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -42,7 +62,8 @@ int main(){
     int t;
     cin >> t;
     while(t--)
-        soln();
+        // soln();
+        soln1();
     return 0;
 }
 
