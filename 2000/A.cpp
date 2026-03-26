@@ -22,6 +22,15 @@ void soln()
         NO;
 }
 
+void effsoln(){
+    int n;
+    cin >> n;
+    if((n>= 102 && n<= 109) || (n>=1010 & n<=1099))
+        YES;
+    else
+        NO;
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -29,7 +38,8 @@ int main(){
     int t;
     cin >> t;
     while(t--)
-        soln();
+        // soln();
+        effsoln();
     return 0;
 }
 
