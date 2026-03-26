@@ -23,7 +23,18 @@ void soln()
             mat[i][j] = mat[i-1][j] + mat[i][j-1];
 
     cout << mat[n-1][n-1] << endl;
-    
+}
+
+int recMax(int r,int c){
+    if(r==1 || c==1)
+        return 1;
+    return recMax(r-1, c) + recMax(r, c-1);
+}
+
+void soln1(){
+    int n;
+    cin >> n;
+    cout << recMax(n,n) << endl;
 }
 
 
@@ -33,6 +44,13 @@ int main(){
     int t=1;
     // cin >> t;
     while(t--)
-        soln();
+        // soln();
+        soln1();
     return 0;
 }
+
+/*
+    It's a pascal triangle.
+    (2n-2)
+    (n-1)
+*/
