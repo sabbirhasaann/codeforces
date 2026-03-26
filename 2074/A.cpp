@@ -23,6 +23,15 @@ void soln()
         NO;
 }
 
+void effsoln()
+{
+    int l,r,d,u;
+    cin >> l >> r >> d >> u;
+    if(l==r && r==d && d==u)
+        YES;
+    else
+        NO;
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
