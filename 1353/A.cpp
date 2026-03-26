@@ -25,6 +25,12 @@ void soln()
 
 }
 
+void soln1(){
+    int n, m;
+    cin >> n >> m;
+    cout << min(2, n - 1) * m << endl;
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
