@@ -17,6 +17,11 @@ void soln()
     cout << ans << endl;    
 }
 
+void soln1(){
+    cin >> n >> m;
+    cout << (n * m + 1) / 2 << '\n';
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
