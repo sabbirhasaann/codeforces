@@ -34,6 +34,17 @@ void soln()
         NO;
 }
 
+void soln1(){
+    vector<int> a(3);
+    for (auto &it : a) cin >> it;
+    sort(a.begin(), a.end());
+    if (a[1] != a[2]) {
+        cout << "NO" << endl;
+    } else {
+        cout << "YES" << endl << a[0] << " " << a[0] << " " << a[2] << endl;
+    }
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
