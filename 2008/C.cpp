@@ -19,6 +19,22 @@ void soln()
     cout << cnt << endl;
 }
 
+void soln1(){
+    long long a,b;
+    cin>>a>>b;
+    b-=a;
+    long long l=2,r=1000000000;
+    while(l<r)
+    {
+        long long m=(l+r)/2;
+        if(m*(m-1)/2<=b)
+            l=m+1;
+        else
+            r=m;
+        
+    }
+    cout<<l-1<<endl;
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -45,4 +61,10 @@ int main(){
 1
 5
 44721
+*/
+
+/* 
+Now, the task is to find the biggest 𝑥 such that 𝑙+𝑥⋅(𝑥+1)2≤𝑟. 
+In fact, it can be found by binary search, the formula of discriminant, 
+or just by brute force. 
 */
