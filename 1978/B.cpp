@@ -22,6 +22,16 @@ void soln()
     cout << ans << endl;
 }
 
+void soln1(){
+    long long n, a, b;
+    cin >> n >> a >> b;
+    if (b <= a) {
+        cout << n * a << endl;
+    } else {
+        long long k = min(b &mdash; a + 1, n);
+        cout << (b &mdash; k + 1) * n + k * (k &mdash; 1) / 2 << endl;
+    }
+}
 
 int main(){
     ios_base::sync_with_stdio(false);
