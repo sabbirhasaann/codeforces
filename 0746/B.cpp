@@ -26,6 +26,10 @@ void soln()
 
 void solnEncoding()
 {
+    /*
+    initializing a string of n length
+    string t=string(n,'a');
+    */
     string s;
     cin >> s;
     int n = s.length();
