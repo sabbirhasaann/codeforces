@@ -34,6 +34,24 @@ void soln()
     cout << rh << " " << rm << endl;
 }
 
+void effsoln()
+{
+    int n, H, M, minDiff = INT_MAX;
+    cin >> n >> H >> M;
+
+    while (n--)
+    {
+        int h, m;
+        cin >> h >> m;
+
+        int diff = (h * 60 + m) - (H * 60 + M);
+        if (diff < 0)
+            diff += 1440;
+        minDiff = min(diff, minDiff);
+    }
+    cout << minDiff / 60 << " " << minDiff % 60 << endl;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
