@@ -23,6 +23,16 @@ void soln()
     cout << cnt << endl;
 }
 
+// At first i thought this solution for floor value of (n-1)/(k-1)
+// I do not think the ceil value
+
+void effsoln()
+{
+    int n, k;
+    cin >> n >> k;
+    cout << (n - 1 + k - 2) / (k - 1) << endl;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -30,7 +40,8 @@ int main()
     int t;
     cin >> t;
     while (t--)
-        soln();
+        // soln();
+        effsoln();
     return 0;
 }
 
