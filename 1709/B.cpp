@@ -44,6 +44,50 @@ void soln()
     }
 }
 
+void soln1()
+{
+    int n, m;
+    cin >> n >> m;
+
+    vector<long long> a(n);
+    for (int i = 0; i < n; ++i)
+    {
+        cin >> a[i];
+    }
+
+    vector<long long> l(n, 0);
+    for (int i = 0; i < n - 1; ++i)
+    {
+        l[i + 1] = max(0LL, a[i] - a[i + 1]);
+    }
+
+    vector<long long> r(n, 0);
+    for (int i = 1; i < n; ++i)
+    {
+        r[i] = max(0LL, a[i] - a[i - 1]);
+    }
+
+    for (int i = 0; i < n - 1; ++i)
+    {
+        l[i + 1] += l[i];
+        r[i + 1] += r[i];
+    }
+
+    for (int i = 0; i < m; ++i)
+    {
+        int s, t;
+        cin >> s >> t;
+        if (s < t)
+        {
+            cout << l[t - 1] - l[s - 1] << "\n";
+        }
+        else
+        {
+            cout << r[s - 1] - r[t - 1] << "\n";
+        }
+    }
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
