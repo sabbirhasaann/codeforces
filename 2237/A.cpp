@@ -32,6 +32,19 @@ void soln()
     cout << sum << endl;
 }
 
+void effsoln()
+{
+    int n;
+    cin >> n;
+    int x = 10000, y = 0;
+    for (int i = 0; i < n; ++i)
+    {
+        int z;
+        cin >> z;
+        x = min(x, z), y += x;
+    }
+    cout << y << '\n';
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
