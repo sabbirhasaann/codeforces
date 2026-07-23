@@ -1,4 +1,4 @@
-// 2026/07/23 15:25:40
+// 2026/07/23 20:09:16
 // https://codeforces.com/problemset/problem/2241/C
 
 #include <bits/stdc++.h>
@@ -7,8 +7,18 @@ using namespace std;
 #define YES cout << "YES\n"
 #define NO cout << "NO\n"
 #define endl '\n'
+
 void soln()
 {
+    int n;
+    string s;
+    cin >> n >> s;
+
+    int partition = 0;
+    for (int i = 0; i < n - 1; ++i)
+        if (s[i] != s[i + 1])
+            partition++;
+    (partition == 0 || partition > 1) ? cout << 1 << endl : cout << 2 << endl;
 }
 
 int main()
@@ -22,7 +32,9 @@ int main()
     return 0;
 }
 
-/*input
+/*
+input:
+
 4
 4
 0000
@@ -33,45 +45,54 @@ int main()
 6
 101100
 
-*/
+output:
 
-/*output
 1
 2
 1
 1
 
-*/
 
-/*
-Read the statement.
-Restate the problem.
-Extract constraints.
-Make observations.
-Experiment with tiny examples.
-Form one or more hypotheses.
-Attack the hypotheses with counterexamples.
-Write a proof sketch.
-Design the algorithm.
-Only then write code.
-*/
 
-/*
-Step 1. Problem
+
+Step 1. Restate the problem
+
+I have given a binary string s. I will find a pallindromic
+substring and then delete one character from the choosen
+substring. Apply this operation any numbers of time and
+return or print the minimum possible length after the operation.
+
+
+
+
+Step 2. Extract constraints
+
 
 Input:
+a single integer n (length of the binary strings) and string s.
 
 Output:
+print minimum possible length after the operations
 
 Operations:
+1. Choose a palindromic substring and remove one character
+from the choosen substring.
+2. any number of times
 
 Constraints:
-*/
+Test case t -> 1<= t <= 100
+Int n -> 1<= n <= 100
+time 1s
 
-/*
-Step 2. Make observations
+
+
+Step 3. Make observations
+
 
 Observation 1:
+Seeing the constriants which are small enough and it seems like a
+bruteforce algorithm and greedy algorith will be suit on it.
+
 
 Observation 2:
 
@@ -80,126 +101,77 @@ Observation 3:
 Observation 4:
 
 Observation 5:
-*/
 
-/*
-Step 3. Guess an algorithm
-Why?
-"Why can't the optimal solution do something different here?"
-*/
 
-/*
-Step 9. Form a hypothesis
-*/
 
-/*
-Step 10. Attack the hypothesis
-*/
+Step 4. Form a hypothesis
 
-/*
-Step 4. Attack your own idea
 
-*/
 
-/*
-Step 11. Try to break it
-*/
 
-/*
-Step 5. Prove it(Not yet)
+
+Step 5. Attack the hypothesis
+
+
+
+
+
+Step 6. Try to break it
+
+
+
+
+
+Step 7. Prove it(Not yet)
+
 Only after every attempt fails do we start asking:
-
 Why did it always work?
-*/
 
-/*
-Counterexample Attempt:
+
+Step 8. Counterexample Attempt:
+
+
 Why did it fail?
-*/
 
-/*
-Step 13. Make the hypothesis precise
-*/
 
-/*
-Step 16. Don't trust it yet
+Step 9. Make the hypothesis precise
+
+
+
+
+Step 10. Don't trust it yet
+
 
 Even if you think you've found the construction, don't celebrate.
-*/
-
-/*
-6. Implementation plan
-
-Only now do you write something like:
-
-Implementation Plan
-
-1. Generate the first n−1 prime numbers.
-2. Construct the first element.
-3. For every middle element, compute it using the neighboring primes.
-4. Construct the last element.
-5. Output the sequence.
-
-*/
-
-/*
-Time Complexity:
 
 
-*/
+Step 11. Guess an algorithm
 
-/*
-Mistakes:
-*/
 
-/*
+Why?
+"Why can't the optimal solution do something different here?"
 
-Problem
 
-↓
+Step 12. Implementation plan
 
-Understanding
 
-↓
+Step 13. Time Complexity:
 
-Observations
 
-↓
 
-Hypothesis
 
-↓
 
-Counterexample Search
+Step 14. Mistakes:
 
-↓
 
-Proof
 
-↓
 
-Implementation Plan
+Step 15. Before looking at the code
 
-↓
-
-Complexity
-
-↓
-
-Code
-
-*/
-
-/*
-
-Step 1. Before looking at the code
 
 Whenever you finish coding, ask yourself these three questions:
 
 Does my code implement my proof?
 Can I prove every adjacent gcd?
 Can I prove there are no hidden cases?
-
-Let's answer them.
-
 */
