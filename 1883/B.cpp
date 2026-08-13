@@ -37,6 +37,28 @@ void soln()
         YES;
 }
 
+void soln1()
+{
+    int n, k;
+    string s;
+
+    cin >> n >> k >> s;
+
+    vector<int> f(26);
+
+    for (char c : s)
+        f[c - 'a']++;
+
+    int odd = 0;
+
+    for (int x : f)
+        odd += x % 2;
+
+    if (odd <= k + 1)
+        YES;
+    else
+        NO;
+}
 
 int main()
 {
@@ -45,7 +67,8 @@ int main()
     int t;
     cin >> t;
     while (t--)
-        soln();
+        // soln();
+        soln1();
     return 0;
 }
 
